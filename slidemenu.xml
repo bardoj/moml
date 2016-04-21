@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MOML version="1.0.0" >
+
+    <FUNCTIONLIST>
+        <FUNCTION id="fn_slide" >
+            <FUNCTIONITEM
+                condition="userVariable.menuView=='0'"
+                cmd="{rightArea.left=0,userVariable.menuView='1'}"
+                elseCmd="{rightArea.left=200,userVariable.menuView='0'}" />
+        </FUNCTION>
+    </FUNCTIONLIST>
+
+    <FUNCTIONCALL cmd="{userVariable.menuView='0'}" />
+
+    <UI>
+        <UILAYOUT portrait="720,1280" >
+            <WINDOW
+                id="rightArea"
+                align="relative"
+                layout="200,0,720,1280" >
+                <BUTTON
+                    layout="10,10,80,80"
+                    onClick="{function.fn_slide}" />
+            </WINDOW>
+            <WINDOW
+                align="relative"
+                defaultImg="#000000"
+                layout="0,0,200,1280" >
+            </WINDOW>
+        </UILAYOUT>
+    </UI>
+
+</MOML>
